@@ -1,0 +1,13 @@
+{
+  "name": "mcp-sound-notifications",
+  "description": "Audio notification MCP server for AI agent workflow boundaries. Supports per-agent persona differentiation, anti-fatigue throttling, and multi-IDE installation.",
+  "tags": ["audio", "notifications", "developer-experience", "multi-agent"],
+  "tools": [
+    {"name": "play_sound", "description": "Play audio notification with persona/category support"},
+    {"name": "show_notification", "description": "OS notification without sound"}
+  ],
+  "install": {
+    "command": "python3",
+    "args": ["mcp-server/sound_server.py", "--agent", "${AGENT_ID}"]
+  }
+}

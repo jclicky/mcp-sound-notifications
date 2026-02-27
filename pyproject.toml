@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcp-sound-notifications"
+version = "1.0.0"
+description = "Audio notification MCP server for AI agent workflows — persona differentiation, anti-fatigue throttling, multi-IDE support"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [
+    {name = "John Click"}
+]
+keywords = ["mcp", "audio", "notifications", "ai-agents", "developer-experience"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Multimedia :: Sound/Audio",
+]
+
+dependencies = []
+
+[project.optional-dependencies]
+yaml = ["PyYAML>=6.0"]
+
+[project.urls]
+Homepage = "https://github.com/johnclick/mcp-sound-notifications"
+Documentation = "https://github.com/johnclick/mcp-sound-notifications/blob/main/README.md"
+Issues = "https://github.com/johnclick/mcp-sound-notifications/issues"
+
+[tool.setuptools.packages.find]
+include = ["mcp_server*"]

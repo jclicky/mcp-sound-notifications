@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Sound files (users bring their own)
+config/themes/default/*.mp3
+config/themes/default/*.wav
+config/themes/default/*.ogg
+config/themes/default/*.aiff
+config/themes/default/*.m4a
+!config/themes/default/README.md
+
+# Environment
+.env
+.venv/
+*.egg
+
+# IDE
+.vscode/
+.cursor/
+.idea/
