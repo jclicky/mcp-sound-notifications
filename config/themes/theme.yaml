@@ -1,0 +1,55 @@
+# =============================================================================
+# Example Theme: Star Trek: The Next Generation
+# =============================================================================
+# This is a TEMPLATE showing the theme schema. You must supply your own sound
+# files -- Star Trek sounds are copyrighted by Paramount/CBS.
+#
+# The STNG theme maps naturally to AI agent archetypes:
+# - Picard (command decisions) -> primary agent
+# - Data (analysis, precision) -> code review agent
+# - Geordi (engineering, building) -> CLI/build agent
+# - Worf (security) -> security events across all agents
+
+theme:
+  name: "Star Trek: The Next Generation"
+  description: "Bridge crew personas for agent differentiation"
+  license: "User-supplied sounds required -- Star Trek sounds are NOT included"
+
+personas:
+  picard:
+    description: "Captain Picard -- decisive, authoritative"
+    agent_mapping: "agent-a"
+    categories:
+      completion:
+        pool: ["picard-make-it-so", "picard-engage"]
+      acknowledgment:
+        pool: ["picard-acknowledged"]
+      greeting:
+        pool: ["picard-make-it-so"]
+
+  data:
+    description: "Lt. Cmdr. Data -- analytical, precise"
+    agent_mapping: "agent-b"
+    categories:
+      completion:
+        pool: ["data-fascinating", "data-task-complete"]
+      attention:
+        pool: ["data-captain-query"]
+
+  geordi:
+    description: "Lt. Cmdr. La Forge -- engineering, problem-solving"
+    agent_mapping: "agent-c"
+    categories:
+      completion:
+        pool: ["geordi-done", "geordi-ready"]
+      warning:
+        pool: ["geordi-problem"]
+
+  worf:
+    description: "Lt. Worf -- security events (cross-agent)"
+    agent_mapping: null  # Used for security events regardless of agent
+    categories:
+      refusal:
+        pool: ["worf-not-honorable"]
+      warning:
+        pool: ["worf-shields-up", "worf-red-alert"]
