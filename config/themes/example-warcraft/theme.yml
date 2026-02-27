@@ -1,0 +1,52 @@
+# =============================================================================
+# Example Theme: Warcraft III
+# =============================================================================
+# This is a TEMPLATE showing the theme schema. You must supply your own sound
+# files -- the actual Warcraft sounds are copyrighted by Blizzard Entertainment.
+#
+# To use:
+# 1. Obtain sound files legally (game assets, personal recordings, etc.)
+# 2. Place MP3/WAV files in this directory
+# 3. Update the pool lists below with your filenames
+# 4. Reference this theme in your sound-config.yaml personas section
+
+theme:
+  name: "Warcraft III"
+  description: "Three distinct Warcraft unit personas for agent differentiation"
+  license: "User-supplied sounds required -- Blizzard sounds are NOT included"
+
+personas:
+  peasant:
+    description: "Human Peasant -- eager, helpful, ready to serve"
+    agent_mapping: "agent-a"  # Primary IDE agent
+    categories:
+      completion:
+        pool: ["peasant-job-done", "peasant-jobs-done", "peasant-off-i-go"]
+      acknowledgment:
+        pool: ["peasant-yes-me-lord", "peasant-ready-to-work"]
+      attention:
+        pool: ["peasant-what-is-it", "peasant-more-work"]
+      warning:
+        pool: ["peasant-more-work"]
+
+  rifleman:
+    description: "Dwarven Rifleman -- professional, precise"
+    agent_mapping: "agent-b"  # Secondary CLI agent
+    categories:
+      completion:
+        pool: ["rifleman-brilliant", "rifleman-thank-you"]
+      acknowledgment:
+        pool: ["rifleman-aye-sir", "rifleman-aye"]
+      attention:
+        pool: ["rifleman-hello"]
+
+  peon:
+    description: "Orc Peon -- simple, hardworking"
+    agent_mapping: "agent-c"  # Tertiary CLI agent
+    categories:
+      completion:
+        pool: ["peon-zug-zug", "peon-double"]
+      acknowledgment:
+        pool: ["peon-work-work", "peon-zug-zug"]
+      attention:
+        pool: ["peon-something-need-doing"]
