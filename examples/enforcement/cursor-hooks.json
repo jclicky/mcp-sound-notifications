@@ -1,0 +1,13 @@
+{
+  "_comment": "Sound notification hooks for Cursor IDE. Merge into your .cursor/hooks.json.",
+  "_note": "These hooks auto-trigger sounds at session boundaries without relying on agent memory.",
+
+  "stop": [
+    {
+      "command": "python3 -c \"import subprocess; subprocess.run(['play_sound', '--event', 'task_completed'], capture_output=True)\"",
+      "timeout": 3,
+      "loop_limit": 1,
+      "description": "Play completion sound at session end"
+    }
+  ]
+}

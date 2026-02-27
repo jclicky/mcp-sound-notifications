@@ -1,0 +1,12 @@
+{
+  "_comment": "Sound notification hooks for Windsurf IDE. Merge into your .windsurf/hooks.json.",
+  "_note": "These hooks auto-trigger sounds at cascade completion.",
+
+  "post_cascade_response": [
+    {
+      "command": "python3 -c \"import subprocess; subprocess.run(['play_sound', '--event', 'task_completed'], capture_output=True)\"",
+      "timeout": 3,
+      "description": "Play completion sound after cascade response"
+    }
+  ]
+}

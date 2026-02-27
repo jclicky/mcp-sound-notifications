@@ -1,0 +1,48 @@
+# Audio Notification Protocol
+
+Play audio cues at workflow boundaries to notify the developer.
+
+## When to Play Sounds
+
+| Condition | Sound Call |
+|-----------|-----------|
+| Starting user-requested work | `play_sound(event="task_acknowledged")` |
+| Completed significant work (3+ files) | `play_sound(event="task_completed")` |
+| Git push success | `play_sound(event="git_push_success")` |
+| Need user input / blocked | `play_sound(event="waiting_for_input")` |
+| Error or failure | `play_sound(event="task_failed")` |
+| Trivial action (single file read) | **No sound** |
+
+## MCP Tool Usage
+
+Use the `play_sound` tool from the sound-notifications MCP server:
+
+```python
+# Event-based (recommended - maps to configured theme automatically)
+play_sound(event="task_completed")
+play_sound(event="task_acknowledged")
+play_sound(event="waiting_for_input")
+
+# Category-based (rotates through theme sounds)
+play_sound(category="completion")
+play_sound(category="acknowledgment")
+play_sound(category="attention")
+
+# Direct sound (if you know the sound name)
+play_sound(sound="my-sound-name")
+```
+
+## Sound Selection Guide
+
+- **Routine work** (1-2 files): `category="completion"`
+- **Significant work** (3+ files, user request): `event="task_completed"`
+- **Session start**: `event="session_start"` (if configured in hooks)
+- **Session end**: `event="task_completed"` with summary message
+
+## Do NOT
+
+- Play sounds for every tiny action (context reads, single-line edits)
+- Play sounds in rapid succession (rate limit: 1 sound per 5 seconds)
+- Skip sounds for user-requested deliverables (always acknowledge completion)
+
+Prefix the chat message response with (:memo:rule:audio-notifications) so the user knows that this rule is being applied.
