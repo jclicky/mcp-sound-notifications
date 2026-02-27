@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "sound-notifications": {
+      "command": "python3",
+      "args": ["~/.config/sound-notifications/mcp-server/sound_server.py", "--agent", "windsurf-agent"]
+    }
+  }
+}
